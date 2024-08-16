@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Profile = ({ name, tag, location, image, stats }) => {
   return (
     <>
@@ -16,3 +18,15 @@ const Profile = ({ name, tag, location, image, stats }) => {
 };
 
 export default Profile;
+
+Profile.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    folowers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }),
+};
